@@ -1,0 +1,34 @@
+header{
+    background-color: chocolate;
+    width: 50%;
+}
+main{
+    margin: 10px;
+    margin-right: 50px;
+    background-color: royalblue;
+    padding: 50px;
+}
+.prawy{
+    background-color: red;
+    width: 20%;
+    float: left;
+}
+.srodek{
+    background-color: blue;
+    width: 60%;
+    float: left;
+}
+.lewy{
+    background-color: white;
+    width: 20%;
+    float: left;
+}
+.dol{
+    width: 100%;
+    clear: both;
+}
+.pudelko{
+    background-color: darkgrey;
+    width: 75%;
+    margin: auto;
+}

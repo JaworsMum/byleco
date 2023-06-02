@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <!-- kodowanie polskich znaków-->
+    <meta charset="UTF-8">
+    <meta charset="iso-8859-2">
+    <meta charset="windows-1250">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- słowa kluczowe w stronie-->
+    <meta name="keywords" content="szkola, lekcje, nauka">
+    <!-- czy strona ma byc indeksowana-->
+    <meta name="reobts" content="index">
+    <!-- link do css-->
+    <link rel="styleheet" href="style.css">
+    <!-- podlaczenie pliku javascript-->
+    <script src="skrypt.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header> Znaczniki HTML</header>
+    <section>
+        <h1>Lista znaczników</h1>
+        <ol>
+            <li>znacznik dołączenia obrazu"&lt;img src="adres" title="tytul wyswietlany po najechaniu myszką" alt="tekst alternatywny"&gt;"</li>
+            <!-- znak &lt; zastepuje znak <
+            znak &gt; zastepuje znak > 
+            -->
+            <li>sekcja nagłówka"&lt;header&gt;"</li>
+            <li>zbiór odnośników, menu,belka nawigacyjna"&lt;nav&gt;"</li>
+            <li>sekcje strony"&lt;section&gt;"</li>
+            <li>znacznik tresci, artykuł"&lt;article&gt;"</li>
+            <li>panel boczny, boczne menu"&lt;aside&gt;"</li>
+            <li>stopka strona, stópeczka"&lt;footer&gt;"</li>
+            <li>cześć główna "&lt;main&gt; i &lt;/main&gt;"</li>
+            <li>lista wypunkowana "&lt;ol&gt; i &lt;/ol&gt;"</li>
+            <li>lista nieuporządkowana "&lt;ul&gt; i &lt;/ul&gt;"</li>
+            <li>element listy "&lt;li&gt; i &lt;/li&gt;"</li>
+            <li>typy listy numerownej: <br>
+                type="1" - lista z cyframi arabskimi (domyślna)<br>
+                type="A" - lista z wielkimi literami<br>
+                type="a" - lista z małymi literami<br>
+                type="I" - lista z cyframi dużymi rzymskimi<br>
+                type="i" - lista z cyframi małymi rzymskimi<br>
+            </li>
+            <li>
+                Tabele<br>
+                <ol type="a">
+                    <li>znacznik tabeli "&lt;table&gt; i &lt;/table&gt;"</li>
+                    <li>znacznik wiersza "&lt;tr&gt; i &lt;/tr&gt;"</li>
+                    <li>znacznik pola "&lt;td&gt; i &lt;/td&gt;"</li>
+                    <li>znacznik nagłówka tabeli "&lt;thead&gt; i &lt;/thead&gt;"</li>
+                    <li>znacznik ciała tabeli "&lt;tbody&gt; i &lt;/tbody&gt;"</li>
+                    <li>znacznik nagłówek komórka "&lt;th&gt; i &lt;/th&gt;"</li>
+                    <li>określenie zasięgu nagłówka scope="col" - kolumna, scope="row" - wiersz "&lt;th scope="row"&gt;"</li>
+                    <li>łączenie komórek w poziomie (kolumnami) colspan="ilość" "&lt;td colspan="3"&gt;"</li>
+                    <li>łączenie komórek w pionie (wierszami) rowspan="ilosc" "&lt;td rowspan="3"&gt;"</li>
+                </ol>
+            </li>
+            <li>
+                "&lt;input&gt; i &lt;/input&gt;" - znacznik do wprowadzania danych w zależności od określonego typu <br>
+                Atrybuty:<br>
+                name="" - określa nazwę pola i nazwę zmiennej, do której zostanie wprowadzona wartość z formularza. <br>
+                value="" - określa domyślną wartość pola<br>
+                size="" - określa liczbę znaków mieszczących się w widocznym polu <br>
+                maxlenght="" - określa maksymalną liczbę znaków, jaką możemy wpisać do pola <br>
+                type=""- typ pola input<br>
+                Typy pól input<br>
+                <ul>
+                    <li>"text" - pozwala na wprowadzenie tekstu</li>
+                    <li>"number" - pozwala na wprowadzanie tylko liczb</li>
+                    <li>"chceckbox" - pole do zaznczenia opcji</li>
+                    <li>"radio" - pole wyboru opcji</li>
+                    <li>"password" - pole do wpisywania hasła - ukrywa znaki</li>
+                    <li>"submit" - przycisk do zatwierdzenia i przesłania danych z formularza</li>
+                    <li>"reset" - pole do wyczyszczenia danych z formularza</li>
+                    <li>"file" - dołączenie pliku do formularza</li>
+                    <li>"hidden" - ukryte pole, nie wyświetla się na formularzu ale przesyła dane z formularze</li>
+                    <li>"button" - przycisk w formularzu, wywołujący jakąś funkcje</li>
+                    <li>"color" - pole do wybrania koloru z palety</li>
+                    <li>"email" - pole do wpisanai emaila - sprawdza poprawną składnie adresu</li>
+                    <li>"date" - pozwala wpisać lub wybrać datę z kalendarza</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+    <section>
+        <img src="tiger2.jpg" title="Czołg Panzerkampfwagen VI Aufs B Tiger II" alt="ni ma">
+        <p>Struktura bloków html5</p>
+            <img src="struktura-HTML5.jpg">
+    </section>
+    <footer>
+        Strone zrobił Kamil
+    </footer>
+</body>
+</html>
