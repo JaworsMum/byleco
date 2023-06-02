@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kantor</title>
+    <script src="skrypt.js"></script>
+</head>
+<body>
+    <header><h1>Kantor</h1></header>
+    <main>
+        <p>Podaj kwotę do wymiany <input type="number" id="kwota"></p>
+        <p>
+            <select id="waluta">
+                <option value="euro">EUR - euro</option>
+                <option value="funt">GBP - funt</option>
+                <option value="dolar">USD - dolar</option>
+            </select>
+        </p>
+        <p>
+            <select id="tranzakcja">
+                <option value="kupno">Kupuję</option>
+                <option value="sprzedaz">Sprzedaje</option>
+            </select>
+        </p>
+        <p>Kwota otrzymana po wymianie:<output id="wynik"></output></p>
+        <button onclick="oblicz()">Wymień waluty</button>
+    </main>
+    <footer>
+        Stronę wykonał Przemek Gembalczyk
+    </footer>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<title>zadanie</title>
+
+
+</head>
+
+<body>
+<h1>Oblicz koszt paliwa</h1>
+
+<label>Rodzaj paliwa (1-benzyna, 2-olej napedowy)</br><input type="number" id ="a"></label></br>
+<label>Ile litrów:</br><input type="number" id="b"> </label> </br></br>
+<input type="button" value="OBLICZ" onclick="paliwo()">
+
+<div id="wynik" style="margin-top:20px;"></div>
+<script>
+function paliwo()
+{
+var a=document.getElementById("a").value;
+var b=document.getElementById("b").value;
+
+var suma= a*b;
+document.getElementById("wynik").="Koszt paliwa"+ suma +"zł";
+document.getElementById("wynik").innerHTML="Koszt paliwa"+ suma +"zł";
+
+
+}
+
+</script>
+
+</body>
+</html>
