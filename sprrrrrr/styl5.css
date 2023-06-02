@@ -1,0 +1,82 @@
+*{
+    font-family: Georgia;
+}
+.naglowek,.stopka{
+    background-color: #c75b39;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.lewy1{
+    background-color: #ff8a65;
+    width: 25%;
+    height: 300px;
+    padding-top: 50px;
+    padding: auto;
+    float: left;
+}
+.prawy1{
+    background-color: snow;
+    width: 75%;
+    height: 300px;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    float: right;
+}
+.lewy2{
+    background-color: #7da453;
+    width: 400px;
+    height: 250px;
+    padding: 10px;
+    border-radius: 20px;
+    float: left;
+}
+.srodek2{
+    background-color: #aed581;
+    width: 1050px;
+    height: 230px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+    float: left;
+}
+.prawy2{
+    background-color: #7da453;
+    width: 350px;
+    height: 250px;
+    padding: 10px;
+    border-radius: 20px;
+    float: left;
+}
+.stopka{
+    clear: both;
+}
+img{
+    width: 190px;
+    margin: 10px;
+    box-shadow: 15px 15px 10px dimgray;
+}   
+table,td{
+    border: 1px;
+    border: solid;
+    border-color: dimgray;
+}
+table{
+    width: 80%;
+    margin: auto;
+}
+td:hover{
+    background-color: aqua;
+}
+h1::first-letter,h2::first-letter,h3::first-letter{
+    font-size: 150%;
+    color: olive;
+}
+li{
+    margin: 5px;
+}
+::marker{
+    color: snow;
+}
