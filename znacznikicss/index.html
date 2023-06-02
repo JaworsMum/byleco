@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather&display=swap" rel="stylesheet">
+
+    <title>Kaskadowe arkusze stylów</title>
+    <style>
+        #normalny{
+            font-size: 25pt !important;
+            color:darkcyan
+        }
+        .dziedziczenie{
+            font-size:40pt;
+            color:deeppink;
+        }
+        div > span {
+            font-size:50pt;
+            color:rgb(20, 255, 118);
+        }
+        div + p{
+            font-size: 25pt;
+            color: gold;
+        }
+        aside ~ main{
+            font-size: 25pt;
+            color: gold;
+        }
+
+        a:link {
+            color:red;
+        }
+        a:visited {
+            color:black;
+        }
+        a:hover {
+            color:green;
+        }
+        a:active {
+            color:orange;
+        }
+        .pseudo:first-line{
+            color:green;
+            font-size: 12 px;
+        }
+        .pseudo:first-letter{
+            color:rgb(182, 60, 60);
+            font-size: 20 px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wstawianie stylów</h1>
+    <ol type="a">
+        <li>styl lokalny (w linii)</li>
+        <li>wewnętrzny arkusz stylów</li>
+        <li>zewnętrzny arkusz stylów</li>
+    </ol>
+
+    <h2>Styl lokalny</h2>
+    <p>określamy styl w znaczniku podając jako atrybut style-"właściwość: wartość;"</p>
+    <p style="color: greenyellow">Przykładowy akapit ze zmienionym kolorem</p>
+
+    <p>Można rozciągnąć styl lokalny na kilka znaczników za pomocą znacznika &lt;span&gt;</p>
+    <span style="color:brown">
+    <h3>Nagłówek 3 stopnia</h3>
+    <p>paragraf</p>
+    <label>etykieta</label>
+    </span>
+    <h2>Wewnętrzny arkusz stylów</h2>
+    <p>umieszczany jest wewnątrz dokumnetu html w sekcji "head" i wykorzystuje się do tego znaczniki &lt;style&gt; i &lt;/style&gt;. Poniżej przedstawiamy przykładową zawartość w sekcji head z wykorzystaniem znaczników style</p>
+    <p>
+        &lt;style&gt;<br>
+            body {background-color: cyan;}<br>
+            h1 {font-size: 16pt;}<br>
+
+        &lt;/style&gt;
+    </p>
+    <h2>Zewnętrzny arkusz stylów</h2>
+    <p>style są przechowywane w zewnętrznym pliku, co ułatwia jego zmianę w wielu stronach jednocześnie. Aby podliknować arkusz stylów należy w sekcji head dokumentu html wpisać znacznik  &lt;link rel="stylesheet" type="text/css" href="adres pliku"&gt;. Włąściwości selektorów wprowadza sie tak samo jak w przypadku wewnętrznego arkusza stylów.</p>
+
+    <h1> Kaskadowość arkuszy stylów</h1>
+    <p>Ważność stylów w dokumencie html (jako pierwszy najważniejszy, później mniej ważne - najważniejsze się zawsze wyświetli, mniej ważne tylko wtedy gdy ważniejsze nie wpływają na tą własność) </p>
+    <ol>
+        <li>styl lokalny</li>
+        <li>rozciaganie stylu - znacznik span</li>
+        <li>wydzielone bloki - znaczniki div, section</li>
+        <li>wewnętrzny arkusz stylów</li>
+        <li>zewnętrzny arkusz stylów</li>
+        <li>import stylów do zewnętrznego arkusza</li>
+        <li>atrybuty definiowane w dokumentcie html - </li>
+    </ol>
+    <p>Można zmieniać kolejność ważności arkuszów stylów wykorzystując polecenie !importat umieszczone w deklaracji stylu po wartości, której dotyczy</p>
+    <p>p {font-size:20pt !important; color: green}</p>
+    <p id="normalny" style="font-size:15pt;">Przykładowy tekst ważności stylów</p>
+    <p style="font-size:15pt;">Przykładowy tekst ważności stylów</p>
+    <h1>Dziedziczenie stylów</h1>
+    <p>Pozwala na przenikanie właściwości między stylami. Polega na tym, że jeżeli w stylu ważniejszym nie został zdefiniowany dany selektor to przyjmuje on właściwości stylu niższego rzędu</p>
+    <p class="dziedziczenie">Dziedziczenie <span style="font-size:20pt">stylów</span></p>
+    <p>Dziedziczenie <span style="font-size:20pt">stylów</span></p>
+    <h1>Składnia języka CSS</h1>
+    <p><strong>selektor {właściwość : wartość}</strong> - budowa znacznika CSS</p>
+    <p>Selektor odpowiada znacznikowi html, nazwie klasy lub nazwie id danego elementu</p>
+    <p>właściwość - element określający sposób zmiany danego selektora </p>
+    <p>wartość - zbiór dopuszczalnych danych i radzajów dla danej właściwości. Może ona być wyrażona za pomocą:</p>
+    <ul>
+        <li>Liczb</li>
+        <li>Procenty</li>
+        <li>Słowa kluczowe</li>
+        <li>Jednostki długości - in (cal), cm(centymetr), mm(milimetr), pt(punkty - 1 cal to 72 punkty), pc(pica, 1 pc=12 pt), px(piksele - 1 px=0,75pt), em(wielkość rozmiaru czcionki jaką posiada dany element), ex(wysokość małej litery w tekście)</li>
+        <li>Jednostki czasu</li>
+        <li>ciągi znaków</li>
+        <li>URL</li>
+    </ul>
+    <h2>Kolory</h2>
+    <p>Wartośc koloru może być podawana na trzy sposoby</p>
+    <ul>
+        <li>RGB - trzy liczby w przedziale 0-255 dla kazdego z kolorów, np. rgb(123,0,12)</li>
+        <li>heksadecymalny kod - kolor zapisany za pomocą liczb szestnastkowych, np. #FFCC00</li>
+        <li>słownie np. black</li>
+    </ul>
+    <h1>Selektory</h1>
+    <h2>Selektory elementów</h2>
+    <p>Do określenia wygladu używamy znaczników html. W stylu podajemy tylko nazwę znacznika html a następnie nawias klamrowy {} a w nim wartości dla stylu</p>
+    <h2>Selektor uniwersalny</h2>
+    <p>* - określa wartości dla wszystki znaczników</p>
+    <h2>Selektor potomka</h2>
+    <p> określamy styl dla znacznika, który znajduje sie wewnątrz innego znacznika. np. div p {}</p>
+    <h2>Selektor dziecka</h2>
+    <p>selektro > selektro {} - Selektro dziecka służy do definiowania formatowania elementów, które znajdują się o jeden rząd niżej w hierarchi drzewa dokumentu</p>
+    <div>
+        Przykład dla selektora dziecka<br>
+        Tekst wewnątrz div <span>a teraz span</span>
+        <p>Tekst wewnątrz div i p <span>a teraz span</span> </p>
+    </div>
+    <h2>Selektor sąsiadującego brata</h2>
+    <p>selektro + selektro {} - dla elemetów na tym samym poziomie hiererchi i sąsiadujące obok siebie</p>
+    <div>
+        Blok sąsiadującego brata
+        <p>paragraf w sąsiadującym bracie</p>
+    </div>
+    <p>paragraf po bloku sąsiadującym brata</p>
+    <p>paragraf po paragrafie</p>
+    <h2>Selektor braci</h2>
+    <p>selektor ~ selektor {} - dla elementów znajdujących się na tym samym poziomie hierarcho dodanie stylu dla następnego i kolejnych selektorów</p>
+    <aside>
+        Blok sąsiadującego brata
+        <main>paragraf w sąsiadującym bracie</main>
+    </aside>
+    <main>paragraf po bloku sąsiadującym brata</main>
+    <main>paragraf po paragrafie</main>
+    <h2>Selektor atrybutów</h2>
+    <p>selektor[atrybut] {} - pozwala na odniesienie do atrybutu (id) wewnątrz podanego selektora</p>
+    <p>Przykładowy zapis w css: p[id] {color:black;}, który odnosi się do znacznika p o ustawionym id</p>
+    <h2>selektor atrybutu o określonej wartości</h2>
+    <p>selektor[atrybut="wartość"] {} - pozwala na odniesienie do atrybutu (id) wewnątrz podanego selektora</p>
+    <p>Przykładowy zapis w css: p[id="tomek"] {color:black;}, który odnosi się do znacznika p o id="tomek"</p>
+    <h2>Selektor klasy</h2>
+    <p>selektor.nazwa_klasy {} - odnosimy sie do selektora który ma ustawiony parametr class na podaną nazwa_klasy. Nazwa klasy  musi spełniać następujące warunki:</p>
+    <ul>
+        <li>w wywołaniu klasy zaczynamy od "." kropki a następnie nazwa</li>
+        <li>mogą być używane litery, cyfry, podkreślenia, łaćznik w nazwie klasy</li>
+        <li>Jako pierwsze w nazwie klasy musi być litera</li>
+        <li>wielkość liter ma znaczenie</li>
+        <li>stosowanie polskich znaków jest nie zalecane</li>
+        <li>nie może zawierać spacji</li>
+    </ul>
+    <p>Przykładowe odwołanie w css dla elementu p class="klasa":</p>
+    <p>p.klasa {font-size:12px}</p>
+    <p>.klasa {color:red;} - uniwersalny selektor klasy</p>
+    <p>Dla identyfikatora również można odwołać sie w CSS, należy stosować te same zasady co w przypadku klasy ale zamiast kropki używać "#"</p>
+    p>Przykładowe odwołanie w css dla elementu p id="numer":</p>
+    <p>p#numer {font-size:12px}</p>
+    <p>#numer {color:red;} - uniwersalny selektor identyfikatora</p>
+    <h2>Pseudoklasy</h2>
+    <p>Są to zdefiniowane style, które są uruchamiane(wyświetlane) w momencie wykonania jakieś akcji na stronie.Dla odsyłaczy (znacznik a) można wykorzystać następujące pseudoklasy:</p>
+    <ul>
+        <li>:link - link nieaktywny, nie został przez użytkownika odwiedzony (kliknięty)</li>
+        <li>:visited - link odwiedzony, strona jest wyświetlnoa</li>
+        <li>:hover - link gotowy do kliknięcia, kursor myszy nad linkiem</li>
+        <li>:active - link odwiedzony, strona jest obecnie wczytywana</li>
+    </ul>
+    <p>Przykład: link kolor czerwony, visited kolor czarny, hover klor zielony, active kolor pomarańczowy</p>
+    <p><a href="https://www.onet.pl/">Link do onetu</a></p>
+    <h2>Selektroy pseudoelementów</h2>
+    <p>Są stosowane do taki elementów jak pierwsza linia w tekście, pierwsza litera itp. ale ten tekst musi wpierw być obudowany znacznikiem - bez znacznika to nie działa. Dostępnymi elementami są:</p>
+    <ul>
+        <li>:first-line - określa formatowanie pierwszej linii</li>
+        <li>:first-letter - określa formatowanie pierwszej litery</li>
+    </ul>
+    <p class="pseudo">Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach.Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach. Przykładowy tekst na kilku liniach.</p>
+    <h1>Włąciwości elementów</h1>
+    <h2>Czcionki</h2>
+    <p>pozwalają na okreslenie rodziny czcionki, stylu czcionki, rozmiaru i pogrubienia</p>
+    <h3>font-family</h3>
+    <p>Określamy rodzaj czcionki, można podać kilka rodzajów które zostaną użyte podczas wyświetlanai strony u użytkownika. Można podać nazwę czcionki lub nazwę rodziny czcionek serif, sans-serif, monospace, cursive, fantasy</p>
+    <h3>font-size</h3>
+    <p>określa rozmiar czcionki. Rozmiar czcionki można określić na 5 sposoby:</p>
+    <ol>
+        <li>za pomocą słów kluczowych</li>
+    <li>za pomocą wartości względnych,</li>
+    <li>poprzez jednoski miary</li>  
+    <li>poprzez wielkość podaną w procentach</li> 
+    <li>za pomocą zastosowania responsywnego rozmiaru czcionki</li>
+    </ol>
+    <p>słowa kluczowe w rozmiarze</p>
+    <ol>
+        <li>xx-small - czcionka najmniejsza</li>
+        <li>x-small - czcionka mniejsza</li>
+        <li>small - czcionka mała</li>
+        <li>medium - czcionka średnia - podstawowy rozmiar czcionki</li>
+        <li>large - czcionka duża</li>
+        <li>x-large - czcionka większa</li>
+        <li>xx-large - czcionka największa</li>
+    </ol>
+    <p>Wartości względne czcionki</p>
+    <ol>
+        <li>smaller - czcionka mniejsza od bieżącej</li>
+        <li>larger - czcionka większa od bieżącej</li>
+    </ol>
+    <p>Jednostki miary używane w rozmiarze czcionki</p>
+    <ol>
+        <li>px - piksele</li>
+        <li>pt - punkty</li>
+        <li>cm - centymetry</li>
+        <li>in - cale</li>
+        <li>mm - milimetry</li>
+        <li>pc - pica</li>
+        <li>em - em</li>
+    </ol>
+    <h3>font-style</h3>
+    <p>definiowanie stylu czcionki. Dostępne opcje:</p>
+    <ol>
+        <li>normal - czcionka podstawowa</li>
+        <li>italic - czcionka pochylona</li>
+        <li>oblique - czcionka pochylona stosowana gdy czcionka pochylona nie jest dostępna</li>
+    </ol>
+    <h3>font-variant</h3>
+    <p> pozwala na wybranie pomiędzy normalną czcionką a kapitalikami. Paramterami tej właściwości sa:</p>
+    <ol>
+        <li>normal - czcionka normalna</li>
+        <li>small-caps - kapitaliki</li>
+    </ol>
+    <h3>font-weight</h3>
+    <p>określa pogrubienie czcionki. Można używać następujących atrybutów</p>
+    <ol>
+        <li>normal - normal czcionka</li>
+        <li>bold - czcionka pogrubiona</li>
+        <li>100,200,300,400(odpowiednik normal), 500, 600, 700(odpowiednik bold) - określa wagę czcionkie</li>
+        <li>lighter - czcionka mniej wytłuszczona od przypisanej</li>
+        <li>bolder - czcionka bardziej wytłuszczona od przypisanej</li>
+    </ol>
+    <h3>font</h3>
+    <p>przypisanie wszystkich powyższych atrybutów za pomocą jednego selektora, pozwala na skrócenie kodu, jako wartości podaje się dane tak jak w powyższych selektorach, nie rozgranicza ich przecinkami</p>
+    <p>.klass {font: 14px bold Georgia}</p>
+    <h2>Tekst</h2>
+    <h3>text-indent</h3>
+    <p>określenie wciecia tekstu - tabulatora w akapicie</p>
+    <h3>text-align</h3>
+    <p>określenie wyrównania tekstu. Posiada ono następujące wartości:</p>
+    <ol>
+        <li>left - wyrównanie tekstu do lewego marginesu</li>
+        <li>right - wyrównanie tekstu do prawego marginesu</li>
+        <li>center- wyrównanie tekstu do środka</li>
+        <li>justify - wyjustowanie, rozłożenie równomierne</li>
+    </ol>
+    <h3>line-height</h3>
+    <p>odstęp między wierszami. Mozna podać jako liczbę, wielokrotność linii, wartość procentową</p>
+    <h3>text-decoration</h3>
+    <p>ozdabianie tekstu. Może przyjmować następujące wartości:</p>
+    <ol>
+        <li>none - bez ozdabiana</li>
+        <li>underline - tekst podkreślony</li>
+        <li>overline - linia nad tekstem</li>
+        <li>line-through - tekst przekreślony</li>
+        <li>blink - migotanie tekstu</li>
+    </ol>
+    <h3>letter-spacing</h3>
+    <p> odstęp między literami</p>
+    <h3>word-spacing</h3>
+    <p>odstęp między wyrazami</p>
+    <h3>text-transform</h3>
+    <p>zmiana/transformacja tekstu. Może przyjmować wartości:</p>
+    <ol>
+        <li>capitalize - zmienia pierwsze litery na wielkie litery</li>
+        <li>uppercase - zmienia wszystkie litery na wielkie litery</li>
+        <li>lowercase - zmienai wszystkie litery na małe litery</li>
+        <li>none - bez transformacji</li>
+    </ol>
+    <h3>white-space</h3>
+    <p>Można sterować białymy znakami czyli spacje, tabulatory, znak nowej linii itd. Może przyjmować następujące atrybuty:</p>
+    <ol>
+        <li>normal - zmiena kilka sąsiednich spacji w jedną</li>
+        <li>pre - umożliwia wyświetlanie kilku spacji obok siebie</li>
+        <li>nowrap - łączy kilka spacji w jedno, linia przechodzi do nowego wiersza tylko po znaczniku br</li>
+        <li>pre-wrap - łączenie kilku spacji, linia przechodzi do nowego wiersza w miejscu gdzie jest Enter</li>
+        <li>pre-line - łączenie kilku spacji, linia przechodzi do nowego wierdsza w miejscu gdzie jest enter i automatycznie względem szerokości strony </li>
+    </ol>
+    <h2>Tło i kolor</h2>
+    <h3>color</h3>
+    <p>ustawienei koloru tekstu. Można go ustawić dla paragrafu, sekcji, całej strony</p>
+    <h3>background-color</h3>
+    <p>ustawienie koloru tła elementu</p>
+    <h3>background-image</h3>
+    <p>ustawienie obrazu jako tło</p>
+    <h3>background-repeat</h3>
+    <p>ustawienie tła jako powtarzającego się zdjecia. Wystepuje po atrybucie backgroud-image i może przyjmować następujące wartości</p>
+    <ul>
+        <li>repeat - powtarzanie zdjęcia w obu kierunkach</li>
+        <li>repeat-x - powtarzanie w kierunku osi x - poziomo</li>
+        <li>repeat-y - powtarzanie w kierunku osi y - pionowo</li>
+        <li>no-repeat - nie powtarzanie tła</li>
+    </ul>
+    <h3>background-attachment</h3>
+    <p>blokowanie tła w trakcie przwijania strony - strona musi posiadać suwaki. Może przyjmowac następujące wartości:</p>
+    <ul>
+        <li>scroll - przewijanie tła</li>
+        <li>fixed - tło nieruchome względem przeglądarki</li>
+        <li>local - tło nieruchome względem elementu dla którego zostało zdefiniowane</li>
+    </ul>
+    <h3>background-position</h3>
+    <p>domyślnie grafika tła jest ustawiona w lewym górnym rogu, za pomocą tego znacznika można zmienić jej pozycje. Może przyjmować wartosci:</p>
+    <ul>
+        <li>center - grafika w środku</li>
+        <li>left - grafika z lewej strony</li>
+        <li>right - grafika z prawej strony</li>
+        <li>top- grafika z góry</li>
+        <li>bottom -grafika z dołu</li>
+        <li>jednostka długości - określenie położenia od lewego marginesu</li>
+        <li>left top - grafika w lewym górnym rogu</li>
+        <li>left bottom - grafika w lewym dolnym rogu</li>
+        <li>right top - grafika w prawym górnym rogu</li>
+        <li>right bottom - grafika w prawym dolnym rogu</li>
+    </ul>
+    <h3>backgroud: none;</h3>
+    <p>powoduej usunięcie tła</p>
+    <h3>backgroud</h3>
+    <p>możliwośc ustawienia kilku atrybutów dotyczących tła takich jak np. kolor, pozycja itd. Elementy rozdzielamy spacją</p>
+    <h2>Obramowania</h2>
+    <h3>border-width</h3>
+    <p>określenie szerokości obramowania. W zależności od ilości wartości określamy szerokość obramowania </p>
+    <ol>
+        <li>Jedna podana wartośc to dotyczy wszystkich krawędzi</li>
+        <li>dwie wartości po spacji - pierwsza dotyczy krawędzi poziomych druga do krawędzi pionowych</li>
+        <li>trzy wartości oddzielone spacjami - pierwsza krawędź górna, druga dotyczy krawędzi pionowych, trzecia krawędzi dolnej</li>
+        <li>cztery wartości podane - określają kolejno:górnej, prawej, dolnej i lewej</li>
+    </ol>
+    <p>Szerokośc krawędzi możemy określić za pomocą:</p>
+    <ul>
+        <li>jednostka miary - określamy szerokość</li>
+        <li>thin - cienkie obramowania</li>
+        <li>medium - średnie obramowanie</li>
+        <li>thick - grube obramowanie</li>
+    </ul>
+    <p>można również określać szerokość dla pojedynczych krawędzi:</p>
+    <ul>
+        <li>border-left-width</li>
+        <li>border-right-width</li>
+        <li>border-top-width</li>
+        <li>border-bottom-width</li>
+    </ul>
+    <h3>border-style</h3>
+    <p>określa styl obramowania. Przyjmuje wartości tak jak border-width jeżeli chodzi o określenie dla konkretnej krawędzi. Dodatkowe atrybuty stylów</p>
+    <ul>
+        <li>none - brak obramowania</li>
+        <li>hidden - obramowanie ukryte</li>
+        <li>dotted - linia kropkowana</li>
+        <li>dashed - linia kreskowana</li>
+        <li>solid- linia ciągła</li>
+        <li>double - linia ciągła podwójna</li>
+        <li>groove - "rewerek"</li>
+        <li>ridge - "grzbiet"</li>
+        <li>inset - "ramka"</li>
+        <li>outset - "przycisk"</li>
+    </ul>
+    <h3>border-color</h3>
+    <p>określenie koloru obramowania - selektor przyjmuje ustawienia poszczególnych krawędzi tak jak w końcowej części border-width</p>
+    <h3>border</h3>
+    <p>pozwala na okreslenie kilku właściwości obramowania po wpisaniu ich jako wartości, rozdzielamy je spacją</p>
+    <h2>Marginesy zewnętrzne</h2>
+    <h3>margin-top margin-bottom margin-right margin-left</h3>
+    <p>określenie szerokości marginesów w zależności od strony</p>
+    <h3>margin</h3>
+    <p>określenie wszystkich marginesów. Można ustawić je w zależności od ilości wartości podanych w selektorze: </p>
+    <ol>
+        <li>Jedna podana wartośc to dotyczy wszystkich krawędzi</li>
+        <li>dwie wartości po spacji - pierwsza dotyczy krawędzi poziomych druga do krawędzi pionowych</li>
+        <li>trzy wartości oddzielone spacjami - pierwsza krawędź górna, druga dotyczy krawędzi pionowych, trzecia krawędzi dolnej</li>
+        <li>cztery wartości podane - określają kolejno:górnej, prawej, dolnej i lewej</li>
+    </ol>
+    <h2>Marginesy wewnętrzne</h2>
+    <h3>padding-top padding-bottom padding-right padding-left</h3>
+    <p>określenie szerokości marginesów wewnętrznych w zależności od strony</p>
+    <h3>padding</h3>
+    <p>określenie wszystkich marginesów. Można ustawić je w zależności od ilości wartości podanych w selektorze: </p>
+    <ol>
+        <li>Jedna podana wartośc to dotyczy wszystkich krawędzi</li>
+        <li>dwie wartości po spacji - pierwsza dotyczy krawędzi poziomych druga do krawędzi pionowych</li>
+        <li>trzy wartości oddzielone spacjami - pierwsza krawędź górna, druga dotyczy krawędzi pionowych, trzecia krawędzi dolnej</li>
+        <li>cztery wartości podane - określają kolejno:górnej, prawej, dolnej i lewej</li>
+    </ol>
+    <h2>Obrys</h2>
+    <h3>outline</h3>
+    <p>obramowanie wokół elementu które rózni sie od obramowania tym:</p>
+    <ul>
+        <li>nie zajmuje miejsca, nie wpływa na rozmiar elementu</li>
+        <li>jest tworzony na wierzchu elementu</li>
+        <li>jest definiowany dla wszystkich krawędzi jednocześnie</li>
+    </ul>
+    <h2>Rozmiary elementów</h2>
+    <h3>width</h3>
+    <p>okresla szerokość elemnetu</p>
+    <h3>min-width</h3>
+    <p>pkreśla minimalną szerokość</p>
+    <h3>max-width</h3>
+    <p>maksymalna szerokość</p>
+    <h3>height</h3>
+    <p>okresla wysokość elemnetu</p>
+    <h3>min-height</h3>
+    <p>pkreśla minimalną wysokość</p>
+    <h3>max-height</h3>
+    <p>maksymalna wysokość</p>
+    <h3>overflow</h3>
+    <p>w sytuacji gdy obiekt nie mieści się w rozmiarach podanych za pomocą atrybutów width i height, ukrywa nadmiar elementu lub powiększa do zawartości. Jako atrybuty mogą występowac</p>
+    <ul>
+        <li>visible - pokazwyana jest cała zawartość elementu, niezależnie od jego rozmiaru</li>
+        <li>hidden - treść niemieszcząca się w rozmiarze jest ukrywana</li>
+        <li>scrool - zbyt duży rozmiar powoduje dodanie paska przewijania, który pozwoli na zobaczenie całej zawartości</li>
+        <li>auto - jeżeli jest to konieczne wyświetlą sie suwaki</li>
+    </ul>
+    <h2>Listy</h2>
+    <h3>list-style-type</h3>
+    <p> ustawia styl listy. Może przyjmować następujące elementy punktorów(numerów) listy:</p>
+    <ul>
+        <li>disc - koło</li>
+        <li>circle - okrąg</li>
+        <li>square - kwadrat</li>
+        <li>decimal - liczby arabskie</li>
+        <li>lower-roman - małe cyfry rzymskie</li>
+        <li>upper-roman - duże cyfry rzymskie</li>
+        <li>lower-alpha - małe litery</li>
+        <li>upper-alpha - duże litery</li>
+        <li>none - bez punktora</li>
+    </ul>
+    <h3>list-style-image</h3>
+    <p>zastąpienie punktora zdjęciem</p>
+    <h3>list-style-position</h3>
+    <p> ustalenie pozycji punktora i listy. Przymuje wartości:</p>
+    <ul>
+        <li>outside - punktor pojawia się na zewnątrz zawartość</li>
+        <li>inside - punktor pojawia się na wewnątrz zawartość</li>
+    </ul>
+    <h3>list-style</h3>
+    <p>pozwala na określenie kilku atrybutów listy rozdzielonych spacją</p>
+    <h2>Tabele</h2>
+    <h3>caption-side</h3>
+    <p>ustawienie podpisu dodanego do tabeli (przypis). Może przyjmowac następujące atrybuty</p>
+    <ul>
+        <li>top - podpis nad tabelą</li>
+        <li>bottom - podpis podnad tabelą</li>
+        <li>left - podpis z lewej strony tabeli</li>
+        <li>right - podpis z prawej strony tabeli</li>
+    </ul>
+    <h3>border</h3>
+    <p>obramowanie tabeli</p>
+    <h3>border-collapse</h3>
+    <p>okresla sposó obramowania komórek tabeli. Jako atrybut moze przyjmować collapse - pojedyncze obramowanie, separate - komórki tabeli bądą od siebie odseparowane</p>
+    <h3>empty-cells</h3>
+    <p>określenie obramowania wokół pustych komórek, możne przyjac argumenty - show - obramowanie jest wyświetlane, hide - obramowanie jest ukryte</p>
+    <h3>table-layout</h3>
+    <p>określenie położenia tabeli na stronie. Moze przyjąc argumenty: auto - szerokość jest dopasowana automatycznie do strony; fixed - szerokość tabeli wynika z zadeklarowanej szerokości poszczególnych komórek</p>
+    <h3>border-spacing</h3>
+    <p>okreslenie odstępów między komórkami</p>
+    <h2>Pozycjonowanie</h2>
+    <h3>position</h3>
+    <p>określenie pozycji elementu na stronie. Może przyjmować następujące argumenty:</p>
+    <ul>
+        <li>static- przywraca normalne pozycjonowanie elementu</li>
+        <li>relative - pozycjonowanie względne, pozwala przesunac element  w inne miejsce w stosunku od położenia pierwotnego</li>
+        <li>absolute - pozwala przesunąc element w inne miejsce względem brzegów strony</li>
+        <li>fixed - działanie podobne do absolute, zawsze względme okna przegladarki</li>
+    </ul>
+    <p>Jako parametry mogą zostać podane również:</p>
+    <ul>
+        <li>left - przesuniecie od lewej krawędzi</li>
+        <li>right - przesuniecie od prawej krawędzi</li>
+        <li>top - przesuniecie od górnej krawędzi</li>
+        <li>bottom - przesuniecie od dolnej krawędzi</li>
+    </ul>
+    <h3>opacity</h3>
+    <p>określa przeroczystość elementu. Przyjmuje wartości od 0 do 1 - wartości podajemy po przecinku</p>
+    <h3>clip</h3>
+    <p>obcinanie elementu. Podaje sie kolejno 4 wartości jako współrzętne wyciętego prostokąta z danego elementu</p>
+    <h3>vertical-align</h3>
+    <p>wyrównanie elementu w sytosunku do innych elementów strony. Można używać nastepujących atrybutów:</p>
+    <ul>
+        <li>baseline - wyrównuje linię bazową elementu do linii bazowej elementu nadrzędnego</li>
+        <li>middle - ustawienie elementu na środku wysokości</li>
+        <li>text-top - wyrównuje górna krawędz do tekstu</li>
+    </ul>
+</body>
+</body>
+</body>
+</html>
