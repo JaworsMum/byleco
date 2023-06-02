@@ -1,0 +1,4 @@
+INSERT into wynik VALUES(null,1,"2020-05-20",15);
+SELECT id, informacja, wart_min from bmi;
+select wynik, informacja from wynik ,bmi where wynik.bmi_id=bmi.id;
+select wart_min, wart_max from bmi where informacja like "niedowaga";
